@@ -1,0 +1,17 @@
+body {
+    background-color: #ffeadd;
+}
+
+.textAlign {
+    fill: #6f7175;
+    padding-left:1000px;
+    font-family: 'Cutive', serif;
+}
+
+
+div{
+    width: 33.33%;
+    height:120px;
+    float: left;
+    border-bottom: #6f7175 solid .1px;
+}
