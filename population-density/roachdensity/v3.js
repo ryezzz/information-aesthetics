@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <html>
   <head>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <style>
     
     body{
@@ -26,14 +26,10 @@
 
     }
     
-    svg{
-      float: left;
-    }
-    
     #div1, #div2, #div3{
         /*border: 2px black solid;*/
         /*position: absolute;			*/
-        max-width:50%;
+        max-width:30%;
         height:100%;
         float:left;
     }
@@ -88,7 +84,7 @@
 <!--<div id = "div1"></div>-->
 <!--<div id = "div2"></div>-->
 
-<!--<div id = "div4">-->
+<div id = "div4">
 </div>
   <script type="text/javascript">
 
@@ -96,7 +92,7 @@
     
 //setup divs for experimentation
     var containerDivs =  function(){  
-                        for(var i=0; i<divNumber; i++){
+                        for(var i=1; i<divNumber; i++){
                         var container = d3.select('#container')
                         .append('div')
                         .attr('id', 'div'+ i)
@@ -112,18 +108,18 @@
                         }
                       }
                       
-    var divNumber = 0;
-    var w3 = 0,
-    h3 = 0,
+    var divNumber = 4;
+    var w3 = window.innerWidth,
+    h3 = window.innerHeight,
     nodes3 = [],
     node3
     group3 = 1;
     containerDivs()
 
   
-var vis3 = d3.select("#div0").append("svg")
-    .attr("width", 0)
-    .attr("height", 0);
+var vis3 = d3.select("#div4").append("svg")
+    .attr("width", w3)
+    .attr("height", h3);
 
 
   
@@ -145,21 +141,21 @@ var force3 = d3.layout.force()
     //http://bl.ocks.org/d3byex/fc3aea9afd1230b516fd
     
 force3.on("tick", function(e) {
-//   vis3.selectAll("path")
-//       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-// });
+  vis3.selectAll("path")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+});
 
-// setInterval(function(){
+setInterval(function(){
 
-//   // Add a new random shape.
-//   if (nodes3.length<1000){
-//   nodes3.push({
-//     type: d3.svg.symbolCircle,
-//     size: Math.random() * 3 + 4,
-//     x: 0,
-//     y: 500
-//     });
-// }
+  // Add a new random shape.
+  if (nodes3.length<1000){
+  nodes3.push({
+    type: d3.svg.symbolCircle,
+    size: Math.random() * 3 + 4,
+    x: 0,
+    y: 500
+    });
+}
 //I can customize the shapes by setting the path d http://bl.ocks.org/d3noob/11137963
 // console.log(nodes3)
 // nodes3.forEach(function(d) { d.y = d.depth * 2; });
@@ -192,15 +188,15 @@ force3.on("tick", function(e) {
      
                       
     var divNumber = 4;
-    var w2 = window.innerWidth,
-    h2 = window.innerHeight,
+    var w2 = window.innerWidth/2,
+    h2 = window.innerHeight/3.5,
     nodes2 = [],
     node2
     group2 = 2;
     containerDivs()
 
   
-var vis2 = d3.select("#div1").append("svg")
+var vis2 = d3.select("#div2").append("svg")
     .attr("width", w2)
     .attr("height", h2);
 
@@ -223,9 +219,9 @@ force2.on("tick", function(e) {
 setInterval(function(){
 
   // Add a new random shape.
-  if (nodes2.length<nodeNumber/2){
+  if (nodes2.length<25){
   nodes2.push({
-    type: d3.svg.symbol().type('triangle-up'),
+    type: d3.svg.symbolCircle,
     size: Math.random() * 100 + 150,
     x: 50
     });
@@ -249,19 +245,14 @@ setInterval(function(){
 
 
 // normal tree building stuff taken from a tutorial somewhere
-var w = window.innerWidth,
-    h = window.innerHeight,
+var w = window.innerWidth/3,
+    h = window.innerHeight/3.5,
     nodes = [],
     node
-    group =2;
-    nodeNumber = prompt("Choose a number of cockroaches")
-    // groupNumber = [6, 2, 4, 5];
+    group = 2;
   
 
-var vis = d3.select("#div2")
-    // .data(groupNumber)
-    // .enter()
-    .append("svg")
+var vis = d3.select("#div1").append("svg")
     .attr("width", w)
     .attr("height", h);
 
@@ -278,9 +269,9 @@ force.on("tick", function(e) {
 setInterval(function(){
 
   // Add a new random shape.
-  if (nodes.length<nodeNumber/2){
+  if (nodes.length<25){
   nodes.push({
-    type: d3.svg.ellipse,
+    type: d3.svg.symbolCircle,
     size: Math.random() * 100 + 150,
     y: 0
   });
@@ -303,7 +294,7 @@ setInterval(function(){
 }, 375);
 
   
-}, 30);
+}, 2000);
 
   </script>
 </body>
