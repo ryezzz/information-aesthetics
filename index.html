@@ -2,734 +2,78 @@
 <meta charset="utf-8">
 
 <head>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Hind:300,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Hind:300,500" rel="stylesheet">
 
-<!--<link  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+  <link rel='stylesheet' href='bootstrap/bootstrap.min.css'>
 
+  <link rel='stylesheet' href='/style.css'>
 
-        <link rel='stylesheet' href='bootstrap/bootstrap.min.css'>
-
-
-
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
 </head>
 
-<style>
 
-a{
-  
-  padding:0;
-  margin:0;
-}
-
-a:hover{
-  color: #366396;
-}
-body {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
-
-/*.no-gutter > [class*='col-'] {*/
-/*    padding-right:0;*/
-/*    padding-left:0;*/
-/*    padding-top:0;*/
-/*    padding-bottom:0;*/
-/*}*/
-
-.uniqueInput{
-  /*margin-bottom:-5px;*/
-color:white;
-  /*border-bottom: 1px lightgrey solid;*/
-}
-
-/*.col-12{*/
-/*  padding:0;*/
-/*  margin:0;*/
-/*}*/
-.linkroach{
- color: #414142;
-    font-style: italic;
-    padding-top: 0px;
-    margin-bottom: 20px;
-    padding-left: none;
-    /*border-top: 300px;*/
-    max-width: 100%;
-    font-size: 12px
-    /*font-size: 300 !important;*/
-}
-
-/*.row{*/
-/*  margin: 0;*/
-/*}*/
-
-div {
-  margin: 0;
-  background-color: transparent;
-      /*padding-top: 100px;*/
-
-}
-svg{
-  position: absolute;
-  padding-top: 20%;
-  z-index: 1;
-}
-
-#generatedText{
-  padding-top: 0px;
-  z-index:0;
-  font-size: 30px;
-  text-align: center;
-  color: #696d72;
-  
-        position: absolute;
-      padding-top: 100px;
-      z-index: 0;
-}
-
-.col-4 {
-  /*padding-left: 0;*/
-      /*  position: absolute;*/
-      /*padding-top: 100px;*/
-      /*z-index: 0;*/
-  
-}
-
-container{
-  width: 100%;
-      /*  position: absolute;*/
-      /*padding-top: 100px;*/
-      /*z-index: 0;*/
-}
-
-h1{
-  max-width: 100%;
-  font-size:20px;
-  padding-top: 3%;
-  /*padding-bottom: 1%;*/
- color: #696d72;
-   font-weight: bold;
-   text-align: left;
-      /*   position: absolute;*/
-      /*padding-top: 100px;*/
-      /*z-index: 0;*/
-
-}
-body{
-  background-color: black;
-  font-family: 'Hind', sans-serif;
-  font-weight: lighter;
-
-}
-
-
-rect{
-  fill: black;
-}
-
-
-
-
-label, output {
-  margin-top: 20px;
-  color: lightgray;
-      height: 25px;
-      border-bottom: 50px;
-      
-
-  
-
-}
-
-
-
-input[type=range] {
-  -webkit-appearance: none;
-  /*width: 20%;*/
-  /*margin: 8.75px 0;*/
-}
-input[type=range]:focus {
-  outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-  height: 1.5px;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
-  background: rgba(199, 198, 202, 0.79);
-  border-radius: 0px;
-  border: 0px solid rgba(0, 0, 0, 0);
-}
-input[type=range]::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
-  border: 0px solid rgba(0, 0, 0, 0);
-  height: 15px;
-  width: 13px;
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.69);
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -8.75px;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: rgba(212, 211, 214, 0.79);
-}
-input[type=range]::-moz-range-track {
-  height: 1.5px;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
-  background: rgba(199, 198, 202, 0.79);
-  border-radius: 0px;
-  border: 0px solid rgba(0, 0, 0, 0);
-}
-input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
-  border: 0px solid rgba(0, 0, 0, 0);
-  height: 19px;
-  width: 13px;
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.69);
-  cursor: pointer;
-}
-input[type=range]::-ms-track {
-  height: 1.5px;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-input[type=range]::-ms-fill-lower {
-  background: rgba(186, 185, 190, 0.79);
-  border: 0px solid rgba(0, 0, 0, 0);
-  border-radius: 0px;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
-}
-input[type=range]::-ms-fill-upper {
-  background: rgba(199, 198, 202, 0.79);
-  border: 0px solid rgba(0, 0, 0, 0);
-  border-radius: 0px;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
-}
-input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
-  border: 0px solid rgba(0, 0, 0, 0);
-  height: 19px;
-  width: 13px;
-  border-radius: 0px;
-  background: rgba(255, 255, 255, 0.69);
-  cursor: pointer;
-  height: 1.5px;
-}
-input[type=range]:focus::-ms-fill-lower {
-  background: rgba(199, 198, 202, 0.79);
-}
-input[type=range]:focus::-ms-fill-upper {
-  background: rgba(212, 211, 214, 0.79);
-}
-
-
-
-/*circle {*/
-/*  stroke: #000;*/
-/*  stroke-opacity: .5;*/
-/*}*/
-
-/*thisCircle{*/
-/*  float: left;*/
-/*  position: absolute;*/
-/*}*/
-
-</style>
 
 <body>
-  
-  <div class = "container">
-      <div class = "row">
-                    <div class = "col-12"><h1>Collective Decision-Making in Cockroaches</h1>
-                    </div>
-                    
+
+  <div class="shelter">
+    <div class="row">
+      <div class="col-12">
+        <h1>Collective Decision-Making in Cockroaches</h1>
       </div>
-      
-      <div class = "row">
-                                <div class = "col-12" ><a class = "linkroach" href = "http://www.pnas.org/content/103/15/5835.full.pdf">Based on the 2006 study “Collegial decision making based on social amplification leads to optimal group formation”</a>
-                              </div>
-          
-        </div>
-  
-  </div>
-      
+
     </div>
-  </div>   
-     <div class="container">
-          <div class="row">
-                    <div class="col-4">
-                         <label for="year">Number of Containers</label>
-                        <input type="range" min=3 max=10 step=1 class = "allOptions" id="containerNumberInput" value=5 oninput="selected_container_value = containerNumberInput.value">
-                        <output name="selected_year" id="containerOutput">5</output>
-                    </div>
-                    <div class="col-4">
-                      <label for="year">Cockroaches</label>
-                      <input type="range" min=3 max=1000 step=1 class = "allOptions" id="cockroachNumberInput" value=500 oninput="selected_cockroach_value = cockroachNumberInput.value">
-                      <output name="selected_year" id="roachOutput">500</output>
-                    </div>
-                    <div class="col-4">
-                        <label for="year">Insect Density</label>
-                        <input type="range" min=1 max=100 step=1 id="densityNumberInput" value=50 oninput="selected_density_value = densityNumberInput.value">
-                        <output name="selected_year" id="densityOutput">50</output>
 
-                    </div>
-          </div>
+    <div class="row">
+      <div class="col-12"><a class="linkroach" href="http://www.pnas.org/content/103/15/5835.full.pdf">Based on the 2006 study “Collegial decision making based on social amplification leads to optimal group formation”</a>
       </div>
-     
-      <div class="container" id = "generatedText">
-          <div class="row">
-              <div class = "col-2"></div>
-                    <div class="col-8" >
-                            If <span id = "roachNumberText" class = "uniqueInput"></span>cockroaches are given a choice of <span id = "containerNumberText" class = "uniqueInput"></span> containers that can fit <span id = "roachDensityText" class = "uniqueInput"></span> insects, they will choose to stay both tightly clustered and evenly divided in  <span id = "forceNumberText" class = "uniqueInput"></span> clusters.
-</div>                    
-<div class = "col-2"></div>
-          </div>
+
+    </div>
+
+  </div>
+
+  </div>
+  </div>
+  <div class="shelter">
+    <div class="row">
+      <div class="col-4">
+        <label for="r">Number of Shelters</label>
+        <input type="range" min=2 max=10 step=1 class="allOptions" id="shelterNumberInput" value=5 oninput="selected_shelter_value = shelterNumberInput.value">
+        <output name="selected_year" id="shelterOutput">5</output>
       </div>
-     
+      <div class="col-4">
+        <label for="r">Cockroaches</label>
+        <input type="range" min=3 max=1000 step=1 class="allOptions" id="cockroachNumberInput" value=500 oninput="selected_cockroach_value = cockroachNumberInput.value">
+        <output name="selected_year" id="roachOutput">500</output>
+      </div>
+      <div class="col-4">
+        <label for="r">Shelter Capacity</label>
+        <input type="range" min=1 max=100 step=1 id="capacityNumberInput" value=50 oninput="selected_capacity_value = capacityNumberInput.value">
+        <output name="selected_year" id="capacityOutput">50</output>
 
-     
-     
-     
-        <!--<form>-->
-    <!--    <label for="year">Number of Containers</label>-->
-    <!--    <input type="range" min=3 max=10 step=1 class = "allOptions" id="containerNumberInput" value=5 oninput="selected_container_value = containerNumberInput.value">-->
-    <!--    <output name="selected_year" id="containerOutput">5</output>-->
-    <!--</form>-->
-    
-    
-            <!--<form>-->
-    <!--    <label for="year">Cockroaches</label>-->
-    <!--    <input type="range" min=3 max=1000 step=1 class = "allOptions" id="cockroachNumberInput" value=500 oninput="selected_cockroach_value = cockroachNumberInput.value">-->
-    <!--    <output name="selected_year" id="roachOutput">50</output>-->
-    <!--</form>-->
-    
-    
-            <!--<form>-->
-    <!--    <label for="year">Cockroaches that fit in one container</label>-->
-    <!--    <input type="range" min=1 max=100 step=1 id="densityNumberInput" value=50 oninput="selected_density_value = densityNumberInput.value">-->
-    <!--    <output name="selected_year" id="densityOutput">50</output>-->
+      </div>
+    </div>
+  </div>
 
-
-
-
-
+  <div class="shelter" id="generatedText">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        If <span id="roachNumberText" class="uniqueInput"></span>cockroaches are given a choice of <span id="shelterNumberText" class="uniqueInput"></span> shelters that can fit <span id="roachcapacityText" class="uniqueInput"></span> insects, <span id = "forceNumberOverallText"> they
+        will choose to stay both tightly clustered and evenly divided in <span id="forceNumberText" class="uniqueInput"></span> shelters.</span>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
 </body>
 
 
 <script src="//d3js.org/d3.v3.min.js"></script>
-<script>
-
-
-
-
-
-var width = window.innerWidth/1.2,
-    height = window.innerHeight/2;
-    
-// var containingCircle = d3.selectAll("containingCircle")
-
-
-
-
-    
-    
-
-
-
-
-
-
-// var slider = d3.select('#containerNumberInput');
-// var slider2 = d3.select('#cockroachNumberInput');
-var allOptions = d3.selectAll('.allOptions');
-
-// var sendtorender = [];
-
-// allOptions.on('change', function(){
-
-// var testVal = [];
-
-// slider2.on('change', function() {
-// testVal.push(this.value)
-
-// // });
-
-
-render(5,500,50);
-
-// var length = testVal.length;
-// render(testVal[length-1]);
-    
-// // });
-
-
-// });
-// console.log(sendtorender)
-var cockroachNumberSlider = d3.select('#cockroachNumberInput');
-// cockroachNumberSlider.innerHTML = 1;
-var containerNumberSlider = d3.select('#containerNumberInput')
-// output2.innerHTML = containerNumberSlider.value;
-var densityNumberSlider = d3.select('#densityNumberInput')
-// output3.innerHTML = densityNumberSlider.value;
-
-
-var output1 =	document.querySelector('#containerOutput');
-var output2 =	document.querySelector('#roachOutput');
-var output3 =	document.querySelector('#densityOutput');
-
-
-
-
-containerNumberSlider.on('input', function() {
-d3.selectAll("svg").transition().remove();
-containerNumberSlider = (this.value);
-cockroachNumberSlider = $( "#cockroachNumberInput" ).val();
-densityNumberSlider = $( "#densityNumberInput" ).val();
-render(containerNumberSlider, cockroachNumberSlider, densityNumberSlider);
-output1.value = this.value;
-});
-
-cockroachNumberSlider.on('input', function() {
-d3.selectAll("svg").transition().remove();
-cockroachNumberSlider = (this.value);
-containerNumberSlider = $( "#containerNumberInput" ).val();
-densityNumberSlider = $( "#densityNumberInput" ).val();
-output2.value = this.value;
-render(containerNumberSlider, cockroachNumberSlider, densityNumberSlider);
-});
-
-densityNumberSlider.on('input', function() {
-d3.selectAll("svg").remove();
-densityNumberSlider = (this.value);
-containerNumberSlider = $( "#containerNumberInput" ).val();
-cockroachNumberSlider = $( "#cockroachNumberInput" ).val();
-output3.value = this.value;
-render(containerNumberSlider, cockroachNumberSlider, densityNumberSlider);
-});
-
-
-
-
-
-// slider.on('', function() {
-//     render(this.value);
-
-// });
-
-function gcd(a,b) {
-    a = Math.abs(a);
-    b = Math.abs(b);
-    if (b > a) {var temp = a; a = b; b = temp;}
-    while (true) {
-        if (b == 0) return a;
-        a %= b;
-        if (a == 0) return b;
-        b %= a;
-    }
-}
-
-
-
-
-document.getElementById("rangeInput");
-
-// var containerNumber = prompt("choose number of containers"); //3
-
-// var roachDensity = prompt("choose the maximum number of insects per container") //25
-
-// var roachNumber = prompt("choose number of roaches"); //50
-
-
-
-  // render();
-
-
-function render (containerNumberInput, roachNumberInput, densityNumberInput){
-  
-  
-                          // if <span id = "roachNumberText">100</span>cockroaches are given a choice of <span id = "containerNumberText">10</span> containers that can fit <span id = "roachDensityText">50</span> insects, they will choose to stay both tightly clustered and evenly divided.
-
-
-  
-  
-  // console.log (year)
-var containerNumber = containerNumberInput;
-      // containerNumber
-      //   .remove();
-
-console.log(containerNumber)
-
-var roachDensity =densityNumberInput; //25
-
-var roachNumber = roachNumberInput;//50
-
-var forceNumber = returnForce();
-//All sizes in radius
-var containerSize = width/2/containerNumber;
-
-// console.log(containerSize);
-
-var relRoachSize = width//forceNumber;
-
-// console.log(relRoachSize);
-
-var roachSizeSmall = containerSize/13;
-
-
-// var roachSizeLarge = containerSize/9;
-
-var roachSizeLarge = containerSize/13;
-
-var test = containerNumber;
-
-function returnForce(){
-  
-  //50/25 = 2
-  var selected_year;
-  
-  // console.log(selected_year)
-  
-  //if roach number is half of maximum size, then cluster equals 2
-  if(roachNumber/roachDensity == 2){
-    return 2;
-  //if roach number is the same as roach density then cluster equals 1
-  } else if (roachNumber/roachDensity == 1) {
-    return 1
-  //if roach number is less than the mazimum cluster size, then cluster equals 1
-  } else if (roachDensity > roachNumber){ 
-    return 1 } else if (roachDensity<roachNumber) {
-    
-            // if (test < containerNumber){
-              return Math.floor(roachNumber/roachDensity/containerNumber*2)
-            // } 
-            
-            // else { return containerNumber}
-  
-  } 
-  
-}
-
-
-
-d3.select('#roachNumberText')
-  .text(" " + roachNumberInput + " ");
-  
-d3.select('#containerNumberText')
-  .text(" " + containerNumberInput + " ");
-  
-  
-d3.select('#roachDensityText')
-  .text(" " + densityNumberInput + " ");
-  
-  
-  
-  d3.select('#forceNumberText')
-  .text(" " + forceNumber + " ");
-
-
-// I can have a max of 5 groups of 62
-
-
-console.log(returnForce())
-// console.log(year)
-
-// var containerNumber = 5;
-//force nodes
-var nodes = d3.range(containerNumber).map(function(i) {
-  return {
-    type: Math.random() * 5 | 0,
-    radius: 3,
-    fixed: true,
-    type: i,
-    x: (i + .6) * (width * 1.1 / containerNumber),
-    y: height/2
-  };
-});
-
-
-
-//containingcircle
-var containerNodes = d3.range(containerNumber).map(function(i) {
-  return {
-    type: Math.random() * 5 | 0,
-    radius: containerSize,
-    fixed: true,
-    type: i,
-    x: (i + .6) * (width * 1.1 / containerNumber),
-    y: height/2
-  };
-});
-
-  
-
-// var color = d3.scale.category10();
-
-var force = d3.layout.force()
-    .gravity(0)
-    .charge(0)
-    .nodes(nodes)
-    .size([width, height])
-    .on("tick", ticked);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", window.innerWidth)
-    .attr("height", window.innerHeight)
-    // .attr("x", 300)
-    // .attr("y", 100)
-    
-    .on("mousemove", mousemoved);
-
-var containingCircle = svg.selectAll(".containingCircle")
-    .data(containerNodes)
-  .enter().append("circle")
-    .attr("class", "containingCircle")
-    .attr("r", function(d) { return d.radius; })
-    .style("stroke", function(d) { return "#dbdbdb" ; })
-    .style("opacity", .5)
-    .style("stroke-width", function(d) { return 3 ; });
-
-// svg.append("rect")
-//     .attr("width", width)
-//     .attr("height", height);
-
-//force circles
-
-var forceData = [1,2];
-// svg.selectAll("circle")
-//     .data(containerNodes)
-//     .enter().append("circle")
-//     // .attr("class", "forceCircle")
-//     .attr("rx", function(d) { return d.radius - 2; })
-//     .attr("ry", function(d) { return d.radius - 2; })
-//     .attr("class", "thisCircle")
-//     .style("fill", function(d) { return "#70cbd3" ; });
-    
-    
-// containing circles    
-
-
-
-var p0;
-
-force.start();
-
-var nodeNumberArr = [];
-
-function mousemoved() {
-  
-    
-  nodeNumberArr.push(1);
-  var p1 = d3.mouse(this);
-  p0 = p1;
-  var node = {
-    // changes radius
-    radius: Math.random() * roachSizeSmall + roachSizeLarge,
-    
-    ///this is where I hange the force to include all circles
-    type: Math.random() * forceNumber| 0,
-    x: p1[0],
-    y: p1[1],
-    px: (p0 || (p0 = p1))[0],
-    py: p0[1],
-    rx: 10,
-    ry: 18
-  };
-
-// console.log(nodeNumberArr)
-//svg.append("elipse")
-
-  if (nodeNumberArr.length<=roachNumber){
-
-  svg.append("circle")
-      .data([node])
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
-      .attr("r", function(d) { return d.radius - 2; })
-      .style("fill", function(d) { return "#70cbd3"; })
-    .transition()
-      .delay(100000)
-      .attr("r", 1e-6)
-      .each("end", function() { nodes.splice(6, 1); })
-      .remove();
-  nodes.push(node);
-  force.resume();
-}
-}
-				
-				
-function ticked(e) {
-  var q = d3.geom.quadtree(nodes),
-      k = e.alpha * 0.1,
-      i = 0,
-      n = nodes.length,
-      o;
-
-  while (++i < n) {
-    o = nodes[i];
-    if (o.fixed) continue;
-    c = nodes[o.type];
-    o.x += (c.x - o.x) * k;
-    o.y += (c.y - o.y) * k;
-    q.visit(collide(o));
-    
-    
-  }
-
-  svg.selectAll("circle")
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; });
-}
-
-function collide(node) {
-  var r = node.radius + 16,
-      nx1 = node.x - r,
-      nx2 = node.x + r,
-      ny1 = node.y - r,
-      ny2 = node.y + r;
-  return function(quad, x1, y1, x2, y2) {
-    if (quad.point && (quad.point !== node)) {
-      var x = node.x - quad.point.x,
-          y = node.y - quad.point.y,
-          l = Math.sqrt(x * x + y * y),
-          r = node.radius + quad.point.radius;
-      if (l < r) {
-        l = (l - r) / l * .5;
-        node.px += x * l;
-        node.py += y * l;
-      }
-    }
-    return x1 > nx2
-        || x2 < nx1
-        || y1 > ny2
-        || y2 < ny1;
-  };
-}
-
-
-    // d3.selectAll(".containingCircle").remove()
-
-}
-
-
-</script>
-
-
+<script src="/script.js"></script>
 
 
 </html>
