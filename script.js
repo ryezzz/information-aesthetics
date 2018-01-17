@@ -1,5 +1,5 @@
 var width = window.innerWidth / 1.2,
-    height = window.innerHeight / 2;
+    height = window.innerHeight / 1.01;
 
 
 var allOptions = d3.selectAll('.allOptions');

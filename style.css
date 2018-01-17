@@ -1,3 +1,7 @@
+wrapper{
+    
+}
+
 body {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -52,19 +56,20 @@ div {
 
 svg {
     position: absolute;
-    padding-top: 20%;
+    /*padding-top: 20%;*/
     z-index: 1;
 }
 
 #generatedText {
-    padding-top: 0px;
     z-index: 0;
     font-size: 30px;
     text-align: center;
     color: #696d72;
     position: absolute;
-    padding-top: 100px;
     z-index: 0;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 
@@ -75,7 +80,7 @@ shelter {
 h1 {
     max-width: 100%;
     font-size: 20px;
-    padding-top: 3%;
+    padding-top: 1%;
     color: #696d72;
     font-weight: bold;
     text-align: left;
@@ -186,4 +191,75 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]:focus::-ms-fill-upper {
     background: rgba(212, 211, 214, 0.79);
+}
+/*CSS GRID*/
+
+.wrapper {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(12, 1fr);
+    /*grid-template-rows: 40px auto 40px;*/
+    grid-template-areas: "b b b b b b s s s s s s" 
+                         "h h h h h h h h h h h h"
+                         "r r r r r r r r r r r r"
+                         "c c c c c c c c c c c c";
+
+    align-items: flex-start;
+}
+
+
+
+
+
+@media only screen and (min-width: 720px) {
+    .wrapper {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows:auto;
+    grid-template-areas: "b b b b b b b b b b b b" 
+                         "s s s s s s s s s s s s"
+                         "h h h h r r r r c c c c";
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
+    }
+}
+
+
+
+.gridBigTitle {
+    grid-area: b;
+}
+
+
+.gridSubtitle {
+    grid-area: s;
+    line-height: 1;
+}
+
+.gridNumShelters {
+    grid-area: h;
+    line-height: 0px;
+    text-align: center;
+    padding-top: 5%;
+
+
+}
+
+.gridNumRoaches {
+    grid-area: r;
+    line-height: 0px;
+    text-align: center;
+    padding-top: 5%;
+
+
+
+}
+.gridCapacity {
+    grid-area: c;
+    line-height: 0px;
+    text-align: center;
+    padding-top: 5%;
+
 }
